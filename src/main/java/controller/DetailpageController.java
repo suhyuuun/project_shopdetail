@@ -6,8 +6,12 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import dto.DetailpageDTO;
@@ -20,7 +24,6 @@ import service.DetailpageService;
 public class DetailpageController {
 	private DetailpageService service;
 	private DetailpageDTO pv;
-	String number;
 
 	public DetailpageController() {
 
@@ -36,7 +39,7 @@ public class DetailpageController {
 	@RequestMapping(value = "/list.do", method = RequestMethod.GET)
 	public ModelAndView listMethod(DetailpageDTO pv, ModelAndView mav) {
 		this.pv = new DetailpageDTO();
-		List<DetailpageDTO> aList = service.listProcess(pv);
+		List<DetailpageDTO> aList = service.f_list(pv);
 		mav.addObject("aList", aList);
 		mav.setViewName("list");
 		return mav;
@@ -71,12 +74,44 @@ public class DetailpageController {
 		return "detailpage";
 	}//detailpageMethod()
 	
-	@RequestMapping("/detailpage_aList.do")
-	public ModelAndView detailpageMethod(DetailpageDTO pv, ModelAndView mav) {
-		this.pv = new DetailpageDTO();
-		List<DetailpageDTO> aList = service.list_number(number);
-		mav.addObject("aList", aList);
-		mav.setViewName("detailpage_aList");
-		return mav;
-	}//detailpageMethod()
+//	@GetMapping("/detailpage_aList/{res_num}")
+//	@ResponseBody
+//	public ModelAndView detailpageMethod(@PathVariable(required = false) Integer res_num, ModelAndView mav, DetailpageDTO pv) {
+//		if(res_num == null)
+//			res_num = 27584230;
+//		this.pv = new DetailpageDTO();
+//		List<DetailpageDTO> aList = service.f_list_match(res_num);
+//		mav.addObject("aList", aList);
+//		mav.setViewName("detailpage_aList");
+//		return mav;
+//	}
+	
+	
+//	@RequestMapping(value = "/detailpage_aList.do")
+//	public ModelAndView detailpageMethod(DetailpageDTO pv, @RequestParam("res_num") int res_num, ModelAndView mav) {
+//		this.pv = new DetailpageDTO();
+//		List<DetailpageDTO> aList = service.f_list_match(res_num);
+//		mav.addObject("aList", aList);
+//		mav.setViewName("detailpage_aList");
+//		return mav;
+//	}//detailpageMethod()
+	
+//	@RequestMapping("/detailpage_listmatch.do")
+//	public ModelAndView listmatchMethod(@RequestParam("res_num") String res_num, ModelAndView mav) {
+//		List<DetailpageDTO> data = service.f_list_match(res_num);
+//		mav.addObject("data", data);
+//		mav.addObject("res_num", res_num);
+//		mav.setViewName("detailpage_listmatch");
+//		return mav;
+//	}//listmatchMethod()
+	
+//	@RequestMapping("/detailpage_listmatch.do")
+//	public ModelAndView listmatchMethod(HttpServletRequest httpServletRequest, ModelAndView mav) {
+//		String res_num = httpServletRequest.getParameter("res_num");
+//		List<DetailpageDTO> data = service.f_list_match(res_num);
+//		mav.addObject("data", data);
+//		mav.addObject("res_num", res_num);
+//		mav.setViewName("detailpage_listmatch");
+//		return mav;
+//	}//listmatchMethod()
 }

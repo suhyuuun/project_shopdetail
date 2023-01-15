@@ -11,11 +11,11 @@
 		from seoulfoodsample
 	</select>
 
-	<select id="list_match" parameterType="string"
+	<select id="list_match" parameterType="int"
 		resultType="dto.DetailpageDTO">
 		SELECT *
 		FROM seoulfoodsample
-		WHERE res_num = #{number, jdbcType=VARCHAR}
+		WHERE res_num = #{res_num, jdbcType=VARCHAR}
 	</select>
 	
 </mapper>

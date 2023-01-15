@@ -1,5 +1,6 @@
 package service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import dao.DetailpageDao;
@@ -17,13 +18,15 @@ public class DetailpageServiceImp implements DetailpageService {
 	}
 
 	@Override
-	public List<DetailpageDTO> listProcess(DetailpageDTO pv) {
+	public List<DetailpageDTO> f_list(DetailpageDTO pv) {
 		return dao.list(pv);
 	}
 
 	@Override
-	public List<DetailpageDTO> list_number(String number) {
-		return dao.list_match(number);
+	public List<DetailpageDTO> f_list_match(int res_num) {
+		return dao.list_match(res_num);
 	}
+
+
 
 }

@@ -5,7 +5,6 @@ import java.util.List;
 import dto.DetailpageDTO;
 
 public interface DetailpageService {
-	public List<DetailpageDTO> listProcess(DetailpageDTO pv);
-	public List<DetailpageDTO> list_number(String number);
-	
+	public List<DetailpageDTO> f_list(DetailpageDTO pv);
+	public List<DetailpageDTO> f_list_match(int res_num);	
 }

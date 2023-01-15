@@ -1,5 +1,6 @@
 package dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -25,8 +26,9 @@ public class DetailpageDaoImp implements DetailpageDao {
 	}
 
 	@Override
-	public List<DetailpageDTO> list_match(String number) {
-		return sqlSession.selectList("seoulfoodsample.list_match",number);
+	public List<DetailpageDTO> list_match(int res_num) {
+		return sqlSession.selectList("seoulfoodsample.list_match",res_num);
 	}
+
 }
 

@@ -32,7 +32,6 @@
 <!-- 			</tr> -->
 <%-- 		</c:forEach> --%>
 		
-		
 		<!-- aList에 parameter값 받아서 적용 -->
 		<c:forEach items="${aList}" var="aList">
 			<tr>

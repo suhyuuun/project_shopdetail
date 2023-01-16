@@ -11,7 +11,7 @@
 		from seoulfoodsample
 	</select>
 
-	<select id="list_match" parameterType="int"
+	<select id="list_match" parameterType="Int"
 		resultType="dto.DetailpageDTO">
 		SELECT *
 		FROM seoulfoodsample

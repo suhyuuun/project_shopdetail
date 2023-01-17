@@ -5,18 +5,19 @@
 
 <mapper namespace="seoulfoodsample">
 
-<select id="list" parameterType="dto.DetailpageDTO"
+	<select id="list" parameterType="dto.DetailpageDTO"
 		resultType="dto.DetailpageDTO">
-	select *
-	from seoulfoodsample
+		select *
+		from seoulfoodsample
 	</select>
 
-	<select id="list_match" parameterType="dto.DetailpageDTO"
+	<select id="list_match" parameterType="Int"
 		resultType="dto.DetailpageDTO">
 		SELECT *
 		FROM seoulfoodsample
-		WHERE res_num = #{res_num_data, jdbcType=VARCHAR}  
+		WHERE res_num = #{res_num, jdbcType=VARCHAR}
 	</select>
+	
 </mapper>
 
 

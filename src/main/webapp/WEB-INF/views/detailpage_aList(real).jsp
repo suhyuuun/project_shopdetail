@@ -125,12 +125,8 @@
 	</c:forEach>
 
 	<script>
-		var lat =
-	<%=latitude%>
-		;
-		var lng =
-	<%=longitude%>
-		;
+<%-- 		var lat =<%=latitude%>; --%>
+<%-- 		var lng =<%=longitude%>; --%>
 	</script>
 	<script src=js/detail_page.js></script>
 </body>
